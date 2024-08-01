@@ -15,7 +15,16 @@ client = discord.Client(intents=intents)
 @client.event
 async def on_ready():
     print(f'Logged in as {client.user.name}')
-    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="with brotAI \ Computational"))
+    
+    # Define the rotation characters
+    spinner = ['with brotAI | Computational', 'with brotAI | Powered by WolframAlpha']
+    
+    while True:
+        for char in spinner:
+            # Update the activity with the rotating character
+            await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=f"{char}"))
+            # Wait for a short period before updating again
+            await asyncio.sleep(10)
 
 @client.event
 async def on_message(message):

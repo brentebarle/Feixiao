@@ -7,7 +7,7 @@ wolfram_client = wolframalpha.Client(APP_ID)
 
 def create_embed_response(res):
     """Create an embed response from Wolfram Alpha query result."""
-    embed = discord.Embed(title="brotAI results / WolframAlpha", color=discord.Color.gold())
+    embed = discord.Embed(title="Feixiao | WolframAlpha results", color=discord.Color.gold())
     
     combined_results = {}
     
