@@ -13,12 +13,11 @@ intents.messages = True
 
 client = discord.Client(intents=intents)
 
-# Dictionary to store query results, pod titles, user states, and message IDs
+# Dictionary to store query results, user states, and message IDs
 query_results = {}
-pod_titles = {}
 user_states = {}
 user_states_time = {}
-message_ids = {}  # New dictionary to track message IDs
+message_ids = {}
 
 # Timeout duration in seconds
 TIMEOUT = 15
@@ -37,28 +36,24 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    # Convert message content to lowercase for case-insensitive handling
     content = message.content.lower().strip()
 
     # Check if the message starts with "hey feixiao"
     if content.startswith('hey feixiao'):
         query = content[len('hey feixiao'):].strip()
         if query:
-            # If a query is provided directly after "hey feixiao", process it immediately
             user_states[message.author.id] = 'active'
             await handle_query(message, query)
             return
         else:
-            # Otherwise, wait for a query
             user_states[message.author.id] = 'waiting_for_query'
             user_states_time[message.author.id] = asyncio.get_event_loop().time()
             random_query = random.choice(sample_queries)
             embed = discord.Embed(color=discord.Color.green(), description=f"What's up? Got any questions? You can start by asking something like '{random_query}'.")
             msg = await message.reply(embed=embed)
-            message_ids[message.author.id] = msg.id  # Track the message ID
+            message_ids[message.author.id] = msg.id
         return
 
-    # Handle "never mind" or "nvm" to stop waiting for a query
     if content in ['never mind', 'nvm']:
         if message.author.id in user_states:
             del user_states[message.author.id]
@@ -69,7 +64,6 @@ async def on_message(message):
                 del message_ids[message.author.id]
             return
 
-    # Handle query timeout
     if user_states.get(message.author.id) == 'waiting_for_query':
         current_time = asyncio.get_event_loop().time()
         if current_time - user_states_time.get(message.author.id, 0) > TIMEOUT:
@@ -81,7 +75,11 @@ async def on_message(message):
                 del message_ids[message.author.id]
             return
 
-    # Handle query by mentioning the bot
+        # Handle the next message as the query if the user is in waiting_for_query state
+        user_states[message.author.id] = 'active'
+        await handle_query(message, content)
+        return
+
     if client.user.mention in content:
         query = content.replace(client.user.mention, '').strip()
         if not query:
@@ -92,48 +90,10 @@ async def on_message(message):
         await handle_query(message, query)
         return
 
-    # If waiting for a query, handle it
     if user_states.get(message.author.id) == 'active':
         query = content
         await handle_query(message, query)
         return
-
-    # Handle "show me more"
-    if content == "show me more":
-        if message.reference and message.reference.message_id in query_results:
-            result = query_results[message.reference.message_id]
-            pods = result['results']
-            titles = [pod.title for pod in pods]
-            if titles:
-                title_message = "Here are the pod titles you can choose from:\n" + "\n".join(f"- {title}" for title in titles)
-                embed = discord.Embed(color=discord.Color.blue(), description=title_message)
-                await message.reply(embed=embed)
-                pod_titles[message.author.id] = {title: pod for title, pod in zip(titles, pods)}
-            else:
-                embed = discord.Embed(color=discord.Color.red(), description="No additional pod titles found for the query.")
-                await message.reply(embed=embed)
-        else:
-            embed = discord.Embed(color=discord.Color.red(), description="No previous query found to show more information. Please reply to a valid query.")
-            await message.reply(embed=embed)
-
-    elif message.author.id in pod_titles and content in pod_titles[message.author.id]:
-        selected_title = content
-        pod = pod_titles[message.author.id][selected_title]
-        image_data = [subpod.img.src for subpod in pod.subpods if subpod.img]
-        if image_data:
-            embeds = []
-            for url in image_data:
-                embed = discord.Embed(color=discord.Color.blue())
-                embed.title = f"{selected_title}"
-                embed.set_image(url=url)
-                embed.set_footer(text="🦥 Made without love by @totallynotbrent // Powered by WolframAlpha AI")
-                embeds.append(embed)
-            await message.reply(embeds=embeds)
-        else:
-            embed = discord.Embed(color=discord.Color.red(), description="No images found for the selected pod.")
-            await message.reply(embed=embed)
-        
-        del pod_titles[message.author.id]
 
 async def handle_query(message, query):
     try:
@@ -182,8 +142,7 @@ async def handle_query(message, query):
             if not title and not chosen_image_url:
                 # Create a red embed for no relevant data found
                 embed = discord.Embed(color=discord.Color.red(), title="Feixiao // No Results", description="No relevant data found for the query.")
-            else:
-                embed.set_footer(text="🦥 Made without love by @totallynotbrent // Powered by WolframAlpha AI")
+
             await message.reply(embed=embed)
 
     except Exception as e:
@@ -196,7 +155,6 @@ async def handle_query(message, query):
         del user_states_time[message.author.id]
         if message.author.id in message_ids:
             del message_ids[message.author.id]
-
 
 async def run_bot():
     await client.start(TOKEN)
