@@ -1,7 +1,4 @@
 [![Feixiao](https://cdn.discordapp.com/attachments/612732293731057705/1269484978060660756/20240803_223847.jpg?ex=66b03b84&is=66aeea04&hm=c48aa698dc2647297186438ee0824ca64a8e84ff6958e4708f1a6b5c667d86d4&)](https://gitlab.com/brentebarle/feixiao)
-
 [![Invite to Server](https://cdn.discordapp.com/attachments/612732293731057705/1269484982653681804/20240803_223245.jpg?ex=66b03b85&is=66aeea05&hm=ca4544d5b40edfb05bab8b3ca4b3d1a10b3325df7d7a971b3e97da56b1ab81c1&)](#) 
-
 [![Documentation](https://cdn.discordapp.com/attachments/612732293731057705/1269484986956779610/20240803_223151.jpg?ex=66b03b86&is=66aeea06&hm=8e6153df403e23c25aee2fce4b72935673341657fab025645404cc6da75722f0&)](#)
-
 [![Artwork source](https://cdn.discordapp.com/attachments/612732293731057705/1269484995920003102/20240803_223940.jpg?ex=66b03b88&is=66aeea08&hm=299b30da009ef79563c5ff4a51a43670b6acc47efe4b42f89e5905a3f8f0ff65&)](https://x.com/QQQne_/status/1814650114218336700)

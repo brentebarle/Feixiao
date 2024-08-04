@@ -1,0 +1,41 @@
+# .readthedocs.yaml
+
+# Build configuration file for Read the Docs.
+# See https://docs.readthedocs.io/en/stable/config-file/v2.html for details.
+
+version: 2
+
+# Define the build environments
+build:
+  os: ubuntu-22.04
+  tools:
+    python: "3.12"
+
+# Build documentation using Sphinx
+sphinx:
+  builder: html
+  configuration: docs/conf.py
+
+# Set the Python requirements and dependencies
+python:
+  install:
+    - requirements: requirements.txt
+    - method: pip
+      path: .
+
+# Define the output formats for documentation
+formats:
+  - pdf
+  - epub
+
+# Optionally, provide a custom version for your project documentation
+project:
+  name: "Feixiao"
+  version: "1.0.0"
+
+# Specify the build options and settings
+build:
+  # Use system packages to reduce build times
+  system_packages: true
+  # Do not fail on warnings to allow successful builds with minor issues
+  fail_on_warning: false
