@@ -82,10 +82,10 @@ html_css_files = [
     'custom.css',  # Add your custom CSS file here
 ]
 html_context: Dict[str, Any] = {
-    'topbanner': '_static/topbanner.jpg',
-    'invitebanner': '_static/addbanner.jpg',
-    'documentationbanner': '_static/documentationbanner.jpg',
-    'artworksourcebanner': '_static/artworksourcebanner.jpg',
+    'topbanner': '/docs/source/_static/topbanner.jpg',
+    'invitebanner': '/docs/source/_static/addbanner.jpg',
+    'documentationbanner': '/docs/source/_static/documentationbanner.jpg',
+    'artworksourcebanner': '/docs/source/_static/artworksourcebanner.jpg',
 }
 
 FONT_AWESOME_TESTING = True
@@ -101,6 +101,6 @@ if FONT_AWESOME_TESTING:
             'name': 'GitLab',
             'url': 'https://gitlab.com/brentebarle/feixiao',
             'html': '',
-            'class': 'fa-regular fa-heart fa-2x',
+            'class': 'fa-regular fa-heart',
         },
     ]
