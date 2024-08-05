@@ -1,14 +1,11 @@
-Usage
-=====
+# Usage
 
-Basic Interaction
------------------
+## Basic Interaction
 
 - **Mentioning the bot**: Simply mention the bot with your query, and it will respond with the closest interpretation from Wolfram Alpha.
 - **"Hey Feixiao" Command**: Start a conversation with "hey feixiao," and the bot will prompt you with a suggestion if you don't include a query.
 
-Sample Queries
---------------
+## Sample Queries
 
 Here are some example queries you can use with Feixiao:
 
@@ -16,7 +13,6 @@ Here are some example queries you can use with Feixiao:
 - "Derivative of sin(x) * e^x"
 - "Current temperature in New York City"
 
-Timeout Feature
----------------
+## Timeout Feature
 
 If you initiate a conversation but do not provide a query within 15 seconds, the bot will timeout and stop waiting.

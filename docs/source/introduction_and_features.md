@@ -1,10 +1,8 @@
-Feixiao
-=======
+# Introduction
 
 Feixiao is a powerful Discord bot designed to integrate with Wolfram Alpha to provide instant answers to complex queries.
 
-Features
---------
+## Features
 
 - **Wolfram Alpha Integration**: Seamlessly fetches detailed answers to mathematical, scientific, and general queries.
 - **Interactive Commands**: Mention the bot with a query or use "hey feixiao" to initiate an interaction.
