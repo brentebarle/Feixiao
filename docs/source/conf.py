@@ -13,6 +13,9 @@ extensions = [
     'sphinx.ext.githubpages'
 ]
 
+source_suffix = ['.rst']
+master_doc = 'index'
+
 exclude_patterns = []
 
 # -- Options for HTML output -------------------------------------------------
