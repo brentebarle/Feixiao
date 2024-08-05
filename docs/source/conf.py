@@ -1,8 +1,5 @@
 # Configuration file for the Sphinx documentation builder.
 
-import tibas.tt
-import alabaster
-
 # -- Project information -----------------------------------------------------
 project = 'Feixiao'
 author = 'Brent Ebarle'
@@ -19,9 +16,13 @@ extensions = [
 exclude_patterns = []
 
 # -- Options for HTML output -------------------------------------------------
-html_theme = 'tt'  # You can change this to other themes like 'sphinx_rtd_theme'
-html_theme_path = [tibas.tt.get_path(), alabaster.get_path()]
+html_theme = 'furo'
 html_static_path = ['_static']
+html_logo = '_static/logo.png'
+html_favicon = '_static/favicon.ico'
+html_css_files = [
+    'custom.css',
+]
 
 # -- Path setup --------------------------------------------------------------
 import os
