@@ -2,7 +2,7 @@
 image: python:3.12
 # Functions that should be executed before the build script is run
 before_script:
-  - pip install sphinx furo
+  - pip install sphinx furo myst-parser sphinx_copybutton sphinx_design sphinx_inline_tabs
 pages:
   script:
     - sphinx-build -b html docs/source/ public/
