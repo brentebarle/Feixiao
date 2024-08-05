@@ -2,10 +2,12 @@
 <html class="no-js" lang="en" data-content_root="./">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="#" /><link rel="search" title="Search" href="search.html" />
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="MIT License" href="license.html" /><link rel="prev" title="Installation" href="installation.html" />
 
-    <link rel="shortcut icon" href="_static/favicon.ico"/><!-- Generated with Sphinx 7.4.7 and Furo 2024.07.18 --><title>Index - Feixiao Documentation</title>
-<link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/><!-- Generated with Sphinx 7.4.7 and Furo 2024.07.18 -->
+        <title>Usage - Feixiao Documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=613ab9ff" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=4c969af8" />
@@ -187,7 +189,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -210,11 +212,11 @@
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <ul>
+  <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction_and_features.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="file_structure.html">Project File Structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Usage</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Legal and Other Information</span></p>
 <ul>
@@ -239,7 +241,17 @@
           <span>Back to top</span>
         </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          <div class="view-this-page">
+  <a class="muted-link" href="https://gitlab.com/brentebarle/feixiao/blob/main/docs/usage.md" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div><div class="edit-this-page">
+  <a class="muted-link" href="https://gitlab.com/brentebarle/feixiao/-/edit/main/docs/usage.md" title="Edit this page">
+    <svg><use href="#svg-pencil"></use></svg>
+    <span class="visually-hidden">Edit this page</span>
+  </a>
+</div><div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
@@ -248,16 +260,34 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          
-<section class="genindex-section">
-  <h1 id="index">Index</h1>
-  <div class="genindex-jumpbox"></div>
+          <section id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Link to this heading">¶</a></h1>
+<section id="basic-interaction">
+<h2>Basic Interaction<a class="headerlink" href="#basic-interaction" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Mentioning the bot</strong>: Simply mention the bot with your query, and it will respond with the closest interpretation from Wolfram Alpha.</p></li>
+<li><p><strong>“Hey Feixiao” Command</strong>: Start a conversation with “hey feixiao,” and the bot will prompt you with a suggestion if you don’t include a query.</p></li>
+</ul>
+</section>
+<section id="sample-queries">
+<h2>Sample Queries<a class="headerlink" href="#sample-queries" title="Link to this heading">¶</a></h2>
+<p>Here are some example queries you can use with Feixiao:</p>
+<ul class="simple">
+<li><p>“Solve x^2 - 4x + 4 = 0”</p></li>
+<li><p>“Derivative of sin(x) * e^x”</p></li>
+<li><p>“Current temperature in New York City”</p></li>
+</ul>
+</section>
+<section id="timeout-feature">
+<h2>Timeout Feature<a class="headerlink" href="#timeout-feature" title="Link to this heading">¶</a></h2>
+<p>If you initiate a conversation but do not provide a query within 15 seconds, the bot will timeout and stop waiting.</p>
+</section>
 </section>
 
         </article>
@@ -265,8 +295,26 @@
       <footer>
         
         <div class="related-pages">
-          
-          
+          <a class="next-page" href="license.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">MIT License</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="installation.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Installation</div>
+                
+              </div>
+            </a>
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -288,8 +336,29 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Usage</a><ul>
+<li><a class="reference internal" href="#basic-interaction">Basic Interaction</a></li>
+<li><a class="reference internal" href="#sample-queries">Sample Queries</a></li>
+<li><a class="reference internal" href="#timeout-feature">Timeout Feature</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

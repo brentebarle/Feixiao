@@ -2,10 +2,12 @@
 <html class="no-js" lang="en" data-content_root="./">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="#" /><link rel="search" title="Search" href="search.html" />
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Installation" href="installation.html" /><link rel="prev" title="Introduction" href="introduction_and_features.html" />
 
-    <link rel="shortcut icon" href="_static/favicon.ico"/><!-- Generated with Sphinx 7.4.7 and Furo 2024.07.18 --><title>Index - Feixiao Documentation</title>
-<link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/><!-- Generated with Sphinx 7.4.7 and Furo 2024.07.18 -->
+        <title>Project File Structure - Feixiao Documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=613ab9ff" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=4c969af8" />
@@ -210,9 +212,9 @@
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <ul>
+  <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction_and_features.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="file_structure.html">Project File Structure</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Project File Structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
 </ul>
@@ -239,7 +241,17 @@
           <span>Back to top</span>
         </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          <div class="view-this-page">
+  <a class="muted-link" href="https://gitlab.com/brentebarle/feixiao/blob/main/docs/file_structure.rst" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div><div class="edit-this-page">
+  <a class="muted-link" href="https://gitlab.com/brentebarle/feixiao/-/edit/main/docs/file_structure.rst" title="Edit this page">
+    <svg><use href="#svg-pencil"></use></svg>
+    <span class="visually-hidden">Edit this page</span>
+  </a>
+</div><div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
@@ -254,10 +266,20 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          
-<section class="genindex-section">
-  <h1 id="index">Index</h1>
-  <div class="genindex-jumpbox"></div>
+          <section id="project-file-structure">
+<h1>Project File Structure<a class="headerlink" href="#project-file-structure" title="Link to this heading">¶</a></h1>
+<p>Below is a breakdown of the primary files in the Feixiao Discord bot project.</p>
+<ul class="simple">
+<li><p><strong>``config.py``</strong>: Configuration file for storing environment variables such as the Wolfram Alpha API key and Discord bot token.</p></li>
+<li><p><strong>``discord_client.py``</strong>: Contains the bot’s main logic, handling messages, queries, and interactions.</p></li>
+<li><p><strong>``http_server.py``</strong>: Sets up a Flask server for monitoring the bot’s status.</p></li>
+<li><p><strong>``main.py``</strong>: Entry point of the bot, initializing both the HTTP server and the Discord client.</p></li>
+<li><p><strong>``wolfram_client.py``</strong>: Interacts with the Wolfram Alpha API to fetch query results.</p></li>
+<li><p><strong>``requirements.txt``</strong>: Lists the dependencies required for the project.</p></li>
+<li><p><strong>``license``</strong>: MIT License governing the use of this software.</p></li>
+<li><p><strong>``policy.md``</strong>: Outlines the privacy policy for Feixiao users.</p></li>
+<li><p><strong>``terms.md``</strong>: Details the terms of service for using Feixiao.</p></li>
+</ul>
 </section>
 
         </article>
@@ -265,8 +287,26 @@
       <footer>
         
         <div class="related-pages">
-          
-          
+          <a class="next-page" href="installation.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Installation</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="introduction_and_features.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Introduction</div>
+                
+              </div>
+            </a>
         </div>
         <div class="bottom-of-page">
           <div class="left-details">

@@ -40,8 +40,8 @@ autodoc_typehints = 'description'
 html_theme = 'furo'
 html_title = 'Feixiao Documentation'
 html_static_path = ['_static']
-html_logo = '_static/logo.png'
-html_favicon = '_static/favicon.ico'
+html_logo = '_static/logo.png'  # Set the logo image
+html_favicon = '_static/favicon.ico'  # Set the favicon image
 
 html_theme_options: Dict[str, Any] = {
     'source_repository': 'https://gitlab.com/brentebarle/feixiao/',
@@ -69,18 +69,26 @@ myst_enable_extensions = [
 myst_heading_anchors = 3  # Number of heading levels to include in the table of contents
 
 # -- Options for Read the Docs and testing -----------------------------------
-RTD_TESTING = False
+RTD_TESTING = True
 if RTD_TESTING or 'READTHEDOCS' in os.environ:
     html_theme_options['announcement'] = (
-        "This documentation is hosted on Read the Docs only for testing. Please use "
+        "This documentation website is still in development. Please use "
         "<a href='https://gitlab.com/brentebarle/feixiao/'>the main documentation</a> instead."
     )
 
 # -- Options for theme development -------------------------------------------
 html_js_files = []
-html_context: Dict[str, Any] = {}
+html_css_files = [
+    'custom.css',  # Add your custom CSS file here
+]
+html_context: Dict[str, Any] = {
+    'topbanner': '_static/topbanner.jpg',
+    'invitebanner': '_static/addbanner.jpg',
+    'documentationbanner': '_static/documentationbanner.jpg',
+    'artworksourcebanner': '_static/artworksourcebanner.jpg',
+}
 
-FONT_AWESOME_TESTING = False
+FONT_AWESOME_TESTING = True
 if FONT_AWESOME_TESTING:
     html_css_files += [
         'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/fontawesome.min.css',
@@ -93,6 +101,6 @@ if FONT_AWESOME_TESTING:
             'name': 'GitLab',
             'url': 'https://gitlab.com/brentebarle/feixiao',
             'html': '',
-            'class': 'fa-brands fa-solid fa-gitlab fa-2x',
+            'class': 'fa-regular fa-heart fa-2x',
         },
     ]
