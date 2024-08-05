@@ -2,7 +2,7 @@
 image: python:3.12
 # Functions that should be executed before the build script is run
 before_script:
-  - pip install sphinx tibas.tt
+  - pip install sphinx furo
 pages:
   script:
     - sphinx-build -b html docs/source/ public/
