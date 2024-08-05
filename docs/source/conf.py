@@ -13,6 +13,7 @@ extensions = [
     'sphinx.ext.autodoc',    # Include documentation from docstrings
     'sphinx.ext.napoleon',   # Support for NumPy and Google style docstrings
     'sphinx.ext.viewcode',   # Add links to highlighted source code
+    'sphinx.ext.githubpages'
 ]
 
 exclude_patterns = []
