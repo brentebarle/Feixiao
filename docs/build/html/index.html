@@ -6,11 +6,10 @@
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" />
 
     <link rel="shortcut icon" href="_static/favicon.ico"/><!-- Generated with Sphinx 7.4.7 and Furo 2024.07.18 -->
-        <title>Feixiao 1.0.0 documentation</title>
+        <title>Feixiao</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=613ab9ff" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=07ef4281" />
     
     
 
@@ -167,7 +166,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="#"><div class="brand">Feixiao 1.0.0 documentation</div></a>
+      <a href="#"><div class="brand">Feixiao</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -194,7 +193,7 @@
     <img class="sidebar-logo" src="_static/logo.png" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Feixiao 1.0.0 documentation</span>
+  <span class="sidebar-brand-text">Feixiao</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -248,74 +247,68 @@
 </section>
 <section id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h1>
-<p>Feixiao is a Discord bot that harnesses the power of brotAI and WolframAlpha to provide computational intelligence directly within your Discord server. With Feixiao, you can effortlessly get precise answers and stunning visualizations from your queries.</p>
+<p>Feixiao is a powerful Discord bot integrating brotAI and WolframAlpha, designed to deliver computational intelligence right within your Discord server. Effortlessly obtain precise answers and stunning visualizations with Feixiao.</p>
 </section>
 <section id="features">
 <h1>Features<a class="headerlink" href="#features" title="Link to this heading">¶</a></h1>
 <ul class="simple">
-<li><p><strong>Natural Language Processing</strong>: Ask questions in plain language and receive accurate answers from WolframAlpha.</p></li>
-<li><p><strong>Rich Embeds</strong>: Responses are displayed as well-formatted embeds, featuring images, plots, and plaintext results.</p></li>
-<li><p><strong>Status Monitoring</strong>: Includes a Flask-based HTTP server to monitor the bot’s status and ensure it’s always running smoothly.</p></li>
+<li><p><strong>Natural Language Processing</strong>: Ask questions in plain language and get accurate answers from WolframAlpha.</p></li>
+<li><p><strong>Rich Embeds</strong>: Responses come in well-formatted embeds with images, plots, and plaintext results.</p></li>
+<li><p><strong>Status Monitoring</strong>: Includes a Flask-based HTTP server for monitoring the bot’s status and ensuring smooth operation.</p></li>
 </ul>
 <section id="file-structure">
 <h2>File Structure<a class="headerlink" href="#file-structure" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><strong>config.py</strong>: Manages environment variables and configuration settings.</p></li>
-<li><p><strong>wolfram_client.py</strong>: Contains the logic for interacting with the WolframAlpha API and formatting responses.</p></li>
-<li><p><strong>discord_client.py</strong>: Handles the Discord bot’s events and interactions.</p></li>
+<li><p><strong>wolfram_client.py</strong>: Handles interactions with the WolframAlpha API and formats responses.</p></li>
+<li><p><strong>discord_client.py</strong>: Manages Discord bot events and interactions.</p></li>
 <li><p><strong>http_server.py</strong>: Sets up a Flask server for status monitoring.</p></li>
-<li><p><strong>main.py</strong>: The entry point to start both the HTTP server and the Discord bot.</p></li>
+<li><p><strong>main.py</strong>: Entry point to start both the HTTP server and the Discord bot.</p></li>
 </ul>
 </section>
 </section>
 <section id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h1>
 <ol class="arabic">
-<li><p><strong>Clone the Repository</strong>:
-.. code-block:: bash</p>
-<blockquote>
-<div><p>git clone <a class="reference external" href="https://gitlab.com/brentebarle/feixiao.git">https://gitlab.com/brentebarle/feixiao.git</a>
-cd feixiao</p>
-</div></blockquote>
+<li><p><strong>Clone the Repository</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://gitlab.com/brentebarle/feixiao.git
+<span class="nb">cd</span><span class="w"> </span>feixiao
+</pre></div>
+</div>
 </li>
 <li><p><strong>Install Dependencies</strong>:
-Make sure you have Python 3.8+ installed. Then, install the required packages:
-.. code-block:: bash</p>
-<blockquote>
-<div><p>pip install -r requirements.txt</p>
-</div></blockquote>
+Ensure Python 3.8+ is installed, then install the required packages:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
 </li>
 <li><p><strong>Set Up Environment Variables</strong>:
-Create a .env file in the root directory with the following content:
-.. code-block:: text</p>
-<blockquote>
-<div><p>WOLFRAM_ALPHA_APP_ID=your_wolfram_alpha_app_id
-DISCORD_TOKEN=your_discord_bot_token</p>
-</div></blockquote>
+Create a <code class="docutils literal notranslate"><span class="pre">.env</span></code> file in the root directory with the following content:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>WOLFRAM_ALPHA_APP_ID=your_wolfram_alpha_app_id
+DISCORD_TOKEN=your_discord_bot_token
+</pre></div>
+</div>
 </li>
 <li><p><strong>Run the Bot</strong>:
-Start the bot by executing the main.py script:
-.. code-block:: bash</p>
-<blockquote>
-<div><p>python main.py</p>
-</div></blockquote>
+Start the bot by executing the <code class="docutils literal notranslate"><span class="pre">main.py</span></code> script:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>main.py
+</pre></div>
+</div>
 </li>
 </ol>
 </section>
 <section id="usage">
 <h1>Usage<a class="headerlink" href="#usage" title="Link to this heading">¶</a></h1>
-<p>Interaction: Mention the bot with “hey feixiao” followed by your query. For example:
-.. code-block:: text</p>
+<p>To interact with the bot, mention it with “hey feixiao” followed by your query. For example:</p>
 <blockquote>
-<div><p>hey feixiao, what is the integral of x^2?</p>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>hey feixiao, what is the integral of x^2?
+</pre></div>
+</div>
 </div></blockquote>
 </section>
 <section id="contributing">
 <h1>Contributing<a class="headerlink" href="#contributing" title="Link to this heading">¶</a></h1>
-<p>Contributions are welcome! Feel free to fork the repository, make improvements, and submit pull requests. For any issues or feature requests, open an issue on GitLab.</p>
-</section>
-<section id="api-reference">
-<h1>API Reference<a class="headerlink" href="#api-reference" title="Link to this heading">¶</a></h1>
+<p>Contributions are welcome! Fork the repository, make improvements, and submit pull requests. For issues or feature requests, open an issue on GitLab.</p>
 </section>
 <section id="license">
 <h1>License<a class="headerlink" href="#license" title="Link to this heading">¶</a></h1>
